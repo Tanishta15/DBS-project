@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+ *
+{
+ box-sizing: border-box;
+}
+ html, body {
+ height: 100%;
+ }
+ /* The typing effect */
+@keyframes typing {
+ from { width: 0 }
+ to { width: 100% }
+ }
+
+ /* The typewriter cursor effect */
+ @keyframes blink-caret {
+ from, to { border-color: transparent }
+ 50% { border-color: orange; }
+ }
+
+ body {
+ display: grid;
+ place-items: center;
+background-color: #ff9901e3;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida SansUnicode', Geneva, Verdana, sans-serif;
+ color: black;
+ }
+ .login {
+ width: 60%; /* Adjusted width */
+ padding: 36px;
+ border-radius: 22px;
+ background:#ffffffa9;
+ text-align: center;
+ }
+ .login > h2 {
+ font-size: 38px;
+ font-weight: 500;
+ }
+ .login > h1 {
+ color: rgb(0, 0, 0);
+ font-weight: 800;
+ font-size: 48px;
+ overflow:auto; /* Ensures the content is not revealed until the animation */
+ border-right: .15em solid orange; /* The typwriter cursor */
+ white-space: nowrap; /* Keeps the content on a single line */
+ margin: 40px auto; /* Centered margin */
+ animation:
+ typing 3.5s steps(40, end),
+ blink-caret .75s;
+ }
+ .login-form {
+ display: grid;
+ gap: 20px;
+ place-items: center;
+ width: 100%;
+ margin: 0;
+ }
+ .textbox {
+ width: 100%;
+ position: relative;
+ margin: 14px;
+ }
+
+
+ .login-form input,
+ .login-form button {
+ width: 95%;
+ height: 60px;
+ outline: none;
+ padding: 0.1px 20px;
+ font-family: inherit;
+ border-radius: 8px;
+ }
+
+ .login-form input {
+ background: transparent;
+ border: 2px solid rgba(46, 46, 45, 0.98);
+ font-size: 18px;
+ color: inherit;
+ }
+ .login-form button {
+ cursor: pointer;
+ background: rgba(255, 153, 1, 0.98);
+ border: 0;
+ font-size: larger;
+ font-weight: 600;
+ letter-spacing: 2px;
+ width: 28%;
+ }
+ .login-form button:hover {
+ background-color: #e88206; /* Darker orange on hover */
+ }
+
+ .btn {
+ color: #000000;
+ font-size: 16px;
+ text-decoration: none;
+ margin: 6px;
+ letter-spacing: 1px;
+ }
+
+ .link {
+ color: #000000;
+ font-size: 16px;
+ text-decoration: none;
+ margin: 6px;
+ letter-spacing: 1px;
+ }
+
+</style>
+</head> 
+<body>
+<div class="login">
+<h1>Welcome to Campus Coordin8</h1>
+<h2>USER LOGIN</h2>
+<form class="login-form">
+<div class="textbox">
+<input type="email" placeholder="Username"/>
+</div>
+<div class="textbox">
+<input type="password" placeholder="Password" />
+</div> 
+<button type="submit">
+    <a class="btn" href="userevent.html">
+        LOGIN</a>
+        </button>
+        <a class="link" href="https://www.google.co.in/">
+            Forgot your credentials?
+</a>
+</form>
+</div>
+</body>
+</html>

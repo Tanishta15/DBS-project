@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>User Event</title>
+ <style>
+ /* Body styles */
+ body {
+ background-color: orange; /* Set background color to orange */
+ color: black; /* Default text color */
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida SansUnicode', Geneva, Verdana, sans-serif; text-align: center; /* Center text */
+ padding-top: 20px; /* Adjusted padding for space at the top */
+ margin: 0; /* Remove default margin */
+ }
+ /* Title styles */
+ h2 {
+ color: black; /* Change to black color */
+ margin-bottom: 20px; /* Adjusted margin-bottom */
+ font-size: 48px; /* Increased font size */
+ margin-top: 0; /* Remove default margin from top */
+ font-weight: 300; /* Make font slightly thinner */
+ overflow: hidden; /* Hide overflowing characters */
+ border-right: .15em solid black; /* Create a blinking cursor effect */
+ white-space: nowrap; /* Prevent line breaks */
+ animation: typing 3s steps(20) forwards, blink-caret .75s 3s infinite; /* Typewriter animation */
+ margin: 0 auto; /* Align title with center */
+ width: fit-content; /* Adjust width to fit the content */
+ }
+ /* Define typewriter animation */
+ @keyframes typing {
+ from {
+ width: 0; /* Start with width 0 */
+ }
+ to {
+ width: 100%; /* Increase width to full */
+ }
+ }
+ /* The typewriter cursor effect */
+ @keyframes blink-caret {
+ from, to { border-color: transparent }
+ 50% { border-color: black; }
+ }
+
+ /* Container for event cards */
+ .event-container {
+ display: flex;
+ justify-content: center;
+ align-items: center; /* Align items to the center */
+ flex-wrap: wrap; /* Enable wrapping for event cards */
+ padding: 20px; /* Add padding */
+ background-color: #FFDAB9; /* Pale orange background color */
+ border-radius: 20px; /* Rounded corners */
+ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy
+ effect */
+ margin: 20px; /* Add margin */
+ }
+ /* Event card styles */
+ .event-card {
+ background-color: white; /* Change box background color */
+ border-radius: 10px; /* Adjusted border radius for more rectangular shape
+ */
+ padding: 20px; /* Add padding */
+ margin: 20px; /* Add margin around boxes */
+ width: 400px; /* Adjusted width */
+ max-width: 100%; /* Maximum width */
+ height: 200px; /* Adjusted height */
+ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy
+ effect */
+ transition: transform 0.3s ease-in-out; /* Smooth transition */
+ flex: 1 1 300px; /* Flex properties for responsiveness */
+ }
+ .event-card:hover {
+ transform: translateY(-5px); /* Move card up on hover */
+ }
+ .event-card img {
+ max-width: 100%;
+ border-radius: 10px; /* Increased border radius for images */
+ margin-bottom: 10px;
+ }
+ .event-card h3 {
+ color: black; /* Dark text color */
+ }
+ .event-card p {
+ color: #666; /* Medium dark text color */
+ }
+ </style>
+</head>
+<body>
+ <!-- Title -->
+ <h2><strong>U</strong>pcoming <strong>E</strong>vents</h2>
+ <!-- Container for event cards -->
+ <div class="event-container">
+ <!-- Event Cards -->
+ <div class="event-card">
+ <img src="event1.jpg" alt="Event 1">
+ <h3>Event 1</h3>
+ <p>Description of Event 1.</p>
+ </div>
+ <div class="event-card">
+ <img src="event2.jpg" alt="Event 2">
+ <h3>Event 2</h3>
+ <p>Description of Event 2.</p>
+ </div>
+ <!-- Add more event cards as needed -->
+ </div>
+</body>
+</html>
