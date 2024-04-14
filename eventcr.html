@@ -7,7 +7,7 @@
     <style>
         /* Body styles */
 body {
-    background-color: orange; /* Set background color to orange */
+    background-color: #ff4901e3; /* Set background color to orange */
     color: black; /* Default text color */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center; /* Center text */
@@ -46,8 +46,6 @@ h1 {
 }
 
 .create-event-form label {
-    display: inline-block; /* Make labels inline */
-    width: 200px; /* Set width of labels */
     margin-right: 20px; /* Adjusted margin-right */
     text-align: left; /* Align label text to the right */
     font-weight: 700px;
@@ -57,6 +55,7 @@ h1 {
 
 .create-event-form input[type="text"],
 .create-event-form input[type="number"],
+.create-event-form input[type="date"],
 .create-event-form textarea {
     width: 300px; /* Set width of input fields */
     padding: 8px; /* Adjusted padding */
@@ -68,21 +67,21 @@ h1 {
 }
 
 .create-event-form button[type="submit"] {
-    background-color: orange;
-    padding: 20px;
+    background-color: #ff4901e3;
+    padding: 12px;
     border-radius: 4px;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease;
     text-align: center;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     display: block;
     margin: 0 auto; /* Center the button horizontally */
 }
 
 .registration-form button[type="submit"]:hover {
-    background-color: #e88206; /* Hover background color */
+    background-color: #ff4901e3; /* Hover background color */
 }
     </style>
 </head>
@@ -93,32 +92,75 @@ h1 {
             <h1>CREATE EVENT</h1>
             <form action="#" method="post">
                 <div style="margin-bottom: 10px;">
-                    <label for="club-name" style="display: inline-block; width: 120px;">Club Name:</label>
-                    <input type="text" id="club-name" name="club-name" required>
-                </div>
-                <div style="margin-bottom: 10px;">
                     <label for="event-name" style="display: inline-block; width: 120px;">Event Name:</label>
                     <input type="text" id="event-name" name="event-name" required>
                 </div>
                 <div style="margin-bottom: 10px;">
+                    <label for="club-name" style="display: inline-block; width: 120px;">Club Name:</label>
+                    <input type="text" id="club-name" name="club-name" required>
+                </div>
+                <div style="margin-bottom: 10px;">
                     <label for="event-description" style="display: inline-block; width: 120px;">Event Description:</label>
-                    <textarea id="event-description" name="event-description" rows="4" required></textarea>
+                    <textarea id="event-description" name="event-description" rows="3" required></textarea>
                 </div>
                 <div style="margin-bottom: 10px;">
-                    <label for="ticket-price" style="display: inline-block; width: 120px;">Ticket Price:</label>
-                    <input type="number" id="ticket-price" name="ticket-price" required>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label for="venue" style="display: inline-block; width: 120px;">Venue:</label>
-                    <input type="text" id="venue" name="venue" required>
+                    <label for="event-date" style="display: inline-block; width: 120px;">Event Date:</label>
+                    <input type="date" id="event-date" name="event-date" required>
                 </div>
                 <div style="margin-bottom: 10px;">
                     <label for="event-time" style="display: inline-block; width: 120px;">Event Time:</label>
                     <input type="text" id="event-time" name="event-time" required>
                 </div>
+                <div style="margin-bottom: 10px;">
+                    <label for="participation-fee" style="display: inline-block; width: 120px;">Participation Fee:</label>
+                    <input type="number" id="participation-fee" name="participation-fee" required>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label for="faculty-incharge" style="display: inline-block; width: 120px;">Faculty Incharge:</label>
+                    <input type="text" id="faculty-incharge" name="faculty-incharge" required>
+                </div>
                 <button type="submit">CREATE</button>
             </form>
         </div>
     </div>
+    <!-- jQuery library for date picker-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery Date picker library -->
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize the Datepicker
+            $('#event-date').datepicker({
+                dateFormat: 'yy-mm-dd', // Set the date format
+                changeYear: true, // Allow changing the year
+                changeMonth: true, // Allow changing the month
+                minDate: 0 // Set minimum selectable date to today
+            });
+        });
+    </script>
+
+<!-- jQuery Timepicker library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Initialize the Timepicker
+        $('#event-time').timepicker({
+            timeFormat: 'h:mm p', // Set the time format
+            interval: 30, // Set the interval between times to 30 minutes
+            dynamic: false, // Disallow time changes via typing
+            dropdown: true, // Enable dropdown for time selection
+            scrollbar: true // Enable scrollbar for time selection
+        });
+    });
+</script>
+
+
+
 </body>
 </html>

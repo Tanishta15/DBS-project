@@ -8,7 +8,7 @@
 
 /* Body styles */
 body {
-    background-color: orange; /* Set background color to orange */
+    background-color: #ff9901e3; /* Set background color to orange */
     color: black; /* Default text color */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center; /* Center text */
@@ -18,7 +18,7 @@ body {
 /* Title styles */
 h1 {
     color: rgb(0, 0, 0); 
-    font-weight: 800; 
+    font-weight: 300; 
     font-size: 50px;
     }
 
@@ -43,22 +43,20 @@ h1 {
 
 .registration-form form {
     display: inline-block; /* Make form inline */
-    text-align: center; /* Align text to the left */
+    text-align: left; /* Align text to the left */
 }
 
 .registration-form label {
-    padding: 10px;
-    font-weight: 300px;
-    width: 200px; /* Set a consistent width for all labels */
+    margin-right: 20px; /* Adjusted margin-right */
     text-align: left; /* Align label text to the right */
-    margin-right: 20px; /* Add margin between label and input */
+    font-weight: 700px;
+    padding: 10px;
 }
 
 .registration-form input[type="text"],
 .registration-form input[type="file"],
 .registration-form input[type="submit"],  
 .registration-form select {
-    flex: 1; /* Take up remaining space */
     width: 300px; /* Set width of input fields */
     padding: 8px; /* Adjusted padding */
     font-size: 16px; /* Set font size */
@@ -70,15 +68,15 @@ h1 {
 
 
 .registration-form button[type="submit"] {
-    background-color: orange;
-    padding: 20px;
+    background-color: #ff9901e3;
+    padding: 12px;
     border-radius: 4px;
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease;
     text-align: center;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     display: block;
     margin: 0 auto; /* Center the button horizontally */
 }
@@ -87,7 +85,7 @@ h1 {
     background-color: #e88206; /* Hover background color */
 }
 
-</style>>
+</style>
 </head>
 <body>
     <!-- Registration form -->
@@ -95,6 +93,10 @@ h1 {
         <div class="registration-form">
             <h1>Event Registration</h1>
             <form action="#" method="post" enctype="multipart/form-data">
+                <div style="margin-bottom: 10px;">
+                    <label for="name" style="display: inline-block; width: 150px;">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
                 <div style="margin-bottom: 10px;">
                     <label for="registration-number" style="display: inline-block; width: 150px;">Registration Number:</label>
                     <input type="text" id="registration-number" name="registration-number" required>
@@ -126,7 +128,7 @@ h1 {
                     <input type="file" id="payment-screenshot" name="payment-screenshot" accept="image/*" required>
                 </div>
                 <div style="margin-bottom: 10px;">
-                    <label for="payment-link" style="display: inline-block; width: 150px;">Payment Link:</label>
+                    <label for="payment-link" style="display: inline-block; width: 150px;">Transaction ID:</label>
                     <input type="text" id="payment-link" name="payment-link" required>
                 </div>
                 <button type="submit">REGISTER</button>
