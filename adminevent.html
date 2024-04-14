@@ -1,135 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <style>
-        /* Body styles */
-        body {
-            background-color: orange; /* Set background color to orange */
-            color: black; /* Default text color */
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;            text-align: center; /* Center text */
-            padding-top: 20px; /* Adjusted padding for space at the top */
-            margin: 0; /* Remove default margin */
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Admin Event</title>
+ <style>
+ /* Body styles */
+ body {
+ color: #000000; /* Default text color */
+ background-image: url('/Users/tanishta/Desktop/Work/Database project/DBS-project/manipal.jpg'); /* Replace 'path/to/your/background/image.jpg' with your image path */
+ background-size: cover;
+background-position: center;
+background-attachment: fixed;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+ text-align: center; /* Center text */
+ padding-top: px; /* Adjusted padding for space at the top */
+ margin: 0; /* Reset margin to 0 */
+ background-color: white; /* Set overall page background color to white */
+ }
+ /* Title styles */
+ h2 {
+ color: black; /* Change to black color */
+ margin-bottom: 20px; /* Adjusted margin-bottom */
+ font-size: 48px; /* Increased font size */
+ margin-top: 0; /* Remove default margin from top */
+ font-weight: 300; /* Make font slightly thinner */
+ }
 
-        /* Title styles */
-        h2 {
-            color: black; /* Change to black color */
-            margin-bottom: 20px; /* Adjusted margin-bottom */
-            font-size: 48px; /* Increased font size */
-            margin-top: 0; /* Remove default margin from top */
-            font-weight: 300; /* Make font slightly thinner */
-            overflow: hidden; /* Hide overflowing characters */
-            border-right: .15em solid black; /* Create a blinking cursor effect */
-            white-space: nowrap; /* Prevent line breaks */
-            animation: typing 3s steps(20) 1s forwards; /* Typewriter animation */
-        }
-
-        /* Define typewriter animation */
-        @keyframes typing {
-            from {
-                width: 0; /* Start with width 0 */
-            }
-            to {
-                width: 100%; /* Increase width to full */
-            }
-        }
-
-        /* Centering container */
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* Align items to the center */
-            height: 100vh; /* Full height of the viewport */
-            flex-direction: column; /* Stack items vertically */
-            text-align: center; /* Center text */
-        }
-
-        /* Container for event cards */
-        .event-container {
-            background-color: #FFDAB9; /* Pale orange background color */
-            border-radius: 20px; /* Rounded corners */
-            padding: 40px; /* Add more padding */
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy effect */
-            margin: 20px auto; /* Center horizontally */
-            width: 100%; /* Set width to 100% */
-        }
-
-        /* Event card styles */
-        .event-card {
-            background-color: white; /* Change box background color */
-            border-radius: 10px; /* Adjusted border radius for more rectangular shape */
-            padding: 20px; /* Add padding */
-            margin-bottom: 20px; /* Add margin */
-            width: 100%; /* Set width to 100% */
-            max-width: 600px; /* Adjusted maximum width */
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy effect */
-            transition: transform 0.3s ease-in-out; /* Smooth transition */
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px); /* Move card up on hover */
-        }
-
-        .event-card img {
-            max-width: 100%;
-            border-radius: 10px; /* Increased border radius for images */
-            margin-bottom: 10px;
-        }
-
-        .event-card h3 {
-            color: black; /* Dark text color */
-        }
-
-        .event-card p {
-            color: #666; /* Medium dark text color */
-        }
-
-        /* Style for button */
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+ /* Centering container */
+ .center-container {
+ background-color: #ff4901e3; /* Change main box background color to #ff4901e3 */
+ border-radius: 20px; /* Rounded corners */
+ padding: 40px; /* Add more padding */
+ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy effect */
+ width: calc(100% - 72px); /* Set width to fill available space minus horizontal margins */
+ max-width: 1100px; /* Adjusted maximum width */
+ margin: 56px auto; /* Set margin to center the box vertically and horizontally */
+ }
+ /* Container for event cards */
+ .event-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ margin-bottom: 20px; /* Add margin at the bottom */
+ }
+ /* Event card styles */
+ .event-card {
+ background-color: white; /* Change box background color */
+    border-radius: 10px; /* Adjusted border radius for more rectangular shape */
+    padding: 20px; /* Add padding */
+    width: calc(50% - 40px); /* Set width to half minus double the padding */
+    max-width: calc(50% - 40px); /* Adjusted maximum width */
+    margin: 20px; /* Add margin */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Box shadow for a fancy effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    box-sizing: border-box; /* Include padding in width calculation */
+ }
+ .event-card:hover {
+ transform: translateY(-5px); /* Move card up on hover */
+ }
+ .event-card img {
+ max-width: 100%;
+ border-radius: 10px; /* Increased border radius for images */
+ margin-bottom: 10px;
+ }
+ .event-card h3 {
+ color: black; /* Dark text color */
+ }
+ .event-card p {
+ color: #666; /* Medium dark text color */
+ }
+ /* Style for button */
+ .btn {
+    width: 80%;
+ padding: 10px 20px;
+ border-radius: 16px;
+ text-decoration: none;
+ cursor: pointer;
+ margin-top: 20px; /* Adjusted margin for spacing */
+ color: black; /* Black text color */
+ }
+ /* Button for creating more events */
+ .create-more-btn {
+ background-color: white; /* White background color */
+ border: 2px solid #ff4901e3; /* Border color ff4901e3 */
+ }
+ /* Additional fields */
+ .additional-fields {
+ margin-top: 20px; /* Adjusted margin */
+ }
+ .additional-fields .field {
+ display: inline-block; /* Make buttons inline */
+ margin: 0 10px; /* Adjusted margin */
+ }
+ </style>
 </head>
 <body>
-    <!-- Centered container for events -->
-    <div class="center-container">
-        <!-- Title -->
-        <h2><strong>Upcoming Events</strong></h2>
-
-        <!-- Container for event cards -->
-        <div class="event-container">
-            <!-- Event Cards -->
-            <div class="event-card">
-                <img src="event1.jpg" alt="Event 1">
-                <h3>Event 1</h3>
-                <p>Description of Event 1.</p>
-            </div>
-
-            <div class="event-card">
-                <img src="event2.jpg" alt="Event 2">
-                <h3>Event 2</h3>
-                <p>Description of Event 2.</p>
-            </div>
-            <!-- Add more event cards as needed -->
-        </div>
-
-        <!-- Button for creating more events -->
-        <a class="btn" href="eventcr.html">
-            CREATE EVENT</a>
-            </button>    </div>
+ <!-- Centered container for events -->
+ <div class="center-container">
+ <!-- Title -->
+ <h2><strong>Upcoming Events</strong></h2>
+ <!-- Container for event cards -->
+ <div class="event-container">
+ <!-- Event Cards -->
+ <div class="event-card">
+ <img src="event1.jpg" alt="Event 1">
+ <h3>Event 1</h3>
+ <p>Description of Event 1.</p>
+ </div>
+ <div class="event-card">
+ <img src="event2.jpg" alt="Event 2">
+ <h3>Event 2</h3>
+ <p>Description of Event 2.</p>
+ </div>
+ <div class="event-card">
+ <img src="event3.jpg" alt="Event 3">
+ <h3>Event 3</h3>
+ <p>Description of Event 3.</p>
+ </div>
+ <div class="event-card">
+ <img src="event4.jpg" alt="Event 4">
+ <h3>Event 4</h3>
+ <p>Description of Event 4.</p>
+ </div>
+ </div>
+ <!-- Button for creating more events -->
+ <a href="create_event.html" class="btn create-more-btn">Create More Events</a>
+ </div>
+ <!-- Additional fields -->
+ <div class="additional-fields">
+ <div class="field">
+ <a href="#" class="btn" style="background-color: #ff4901e3;">Club Details</a>
+ </div>
+ <div class="field">
+ <a href="#" class="btn" style="background-color: #ff4901e3;">Faculty Details</a>
+ </div>
+ </div>
 </body>
 </html>
